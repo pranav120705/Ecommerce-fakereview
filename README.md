@@ -1,58 +1,137 @@
-🛡️ RevGuard — Fake Review Detection Backend | Walmart Sparkathon 2025
-This is the backend for RevGuard, a fake review detection system built using a fine-tuned RoBERTa transformer model, submitted as part of Walmart Sparkathon 2025 under the theme: Retail Cybersecurity / Customer Trust.
+# 🛡️ RevGuard — Fake Review Detection System  
+**Walmart Sparkathon 2025 | Customer Trust / Retail Cybersecurity**
 
-RevGuard classifies input reviews as FAKE or GENUINE, and returns a confidence percentage, helping users identify potentially deceptive reviews on e-commerce platforms.
+RevGuard is an AI-powered fake review detection system designed to identify deceptive and manipulated product reviews on e-commerce platforms.  
+It uses a **fine-tuned RoBERTa transformer model** to classify reviews as **FAKE** or **GENUINE**, along with a confidence score, enabling platforms and users to make more informed trust decisions.
 
-🧠 Model Details
-Base Model: roberta-base from HuggingFace
+---
 
-Architecture: Binary classifier with num_labels=2
+## 🚀 Project Overview
 
-Output:
+Online reviews heavily influence customer purchasing decisions, but fake reviews undermine trust and fairness in digital marketplaces.  
+RevGuard addresses this problem by leveraging **state-of-the-art NLP models** to detect suspicious reviews in real time.
 
-prediction: FAKE or GENUINE
-confidence: Percentage confidence in prediction
-Method:
+**Key Capabilities**
+- Binary classification: **FAKE / GENUINE**
+- Confidence-based predictions
+- REST API backend for easy integration
+- Scalable ML inference pipeline
+- Frontend dashboard for testing predictions
 
-Review → Tokenizer → RoBERTa → Logits → Softmax → Prediction + % confidence
-Example:
+---
 
+## 🧠 Model Details
+
+- **Base Model:** `roberta-base` (Hugging Face)
+- **Architecture:** Transformer-based binary classifier
+- **Labels:** 2 (`FAKE`, `GENUINE`)
+- **Framework:** PyTorch + Hugging Face Transformers
+
+### 🔍 Inference Pipeline
+Review Text
+↓
+Tokenizer
+↓
+RoBERTa Encoder
+↓
+Logits
+↓
+Softmax
+↓
+Prediction + Confidence (%)
+
+bash
+Copy code
+
+### 📌 Example Output
+```json
 {
   "prediction": "FAKE",
   "confidence": 92.73
 }
-📁 Folder Structure
-backend/
-├── app/                      # Backend logic (API script goes here)
-│   └── __pycache__/          # Python cache files
-├── models/
-│   └── roberta_saved_model/  # Fine-tuned RoBERTa model files
-fontend/                      # React frontend (typo retained intentionally)
-🚀 Running the Project
-🔧 1. Backend Setup
-Install dependencies
-pip install -r requirements.txt
-Start the backend server
+📁 Project Structure
+graphql
+Copy code
+RevGuard/
+├── backend/
+│   ├── app/                      # API logic (FastAPI / Flask)
+│   │   └── __pycache__/
+│   ├── models/
+│   │   └── roberta_saved_model/  # Fine-tuned RoBERTa model files
+│   ├── requirements.txt
+│   └── app.py
+│
+├── fontend/                      # React frontend (typo retained intentionally)
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+🔧 Running the Project Locally
+1️⃣ Backend Setup (Python)
+Install dependencies:
+
+bash
+Copy code
+pip install -r backend/requirements.txt
+Start the backend server:
+
+bash
+Copy code
 python backend/app.py
-⚛️ 2. Frontend Setup (React)
-Navigate to frontend directory
+The API will be available at:
+
+arduino
+Copy code
+http://localhost:8000
+2️⃣ Frontend Setup (React + Vite)
+Navigate to frontend directory:
+
+bash
+Copy code
 cd fontend
-Install packages and start React app
+Install dependencies:
+
+bash
+Copy code
 npm install
+Start development server:
+
+bash
+Copy code
 npm run dev
 ⚙️ Tech Stack
-Python
-HuggingFace Transformers (roberta-base)
-FastAPI (or Flask if preferred)
-PyTorch
-React (Vite-based)
-☁️ Future Extensions
-Deploy model to Hugging Face / AWS Lambda
-Add multilingual support
-Expand dataset with adversarial/fake samples
-Integrate source/metadata-based validation
-🤝 Done by
+Backend: Python, FastAPI / Flask
+
+ML Framework: PyTorch
+
+NLP: Hugging Face Transformers (roberta-base)
+
+Frontend: React (Vite)
+
+Deployment Ready: Docker / Cloud compatible
+
+☁️ Future Enhancements
+🌍 Multilingual fake review detection
+
+🔗 Metadata & source-based validation (user history, product signals)
+
+🧪 Adversarial fake review generation for robustness
+
+🚀 Cloud deployment (AWS Lambda / Hugging Face Inference Endpoints)
+
+📊 Admin dashboard with analytics and monitoring
+
+🤝 Team
 Team Horizons
 
-🏆 Submitted to
-Walmart Sparkathon 2025 Theme: Customer Trust / Cybersecurity Track: AI for Online Review Reliability
+🏆 Hackathon Submission
+Event: Walmart Sparkathon 2025
+Track: Customer Trust / Retail Cybersecurity
+Theme: AI for Online Review Reliability
+
+📜 License
+This project is for educational and hackathon purposes.
+Model weights and datasets follow their respective licenses.
+
+RevGuard — Building Trust, One Review at a Time. 🛡️
