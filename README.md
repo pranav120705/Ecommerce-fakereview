@@ -1,47 +1,37 @@
-# 🛡️ RevGuard — Fake Review Detection System  
-**Walmart Sparkathon 2025 | Customer Trust / Retail Cybersecurity**
+Here is the consolidated `README.md` code for your project.
 
-RevGuard is an AI-powered fake review detection system designed to identify deceptive and manipulated product reviews on e-commerce platforms.  
-It uses a **fine-tuned RoBERTa transformer model** to classify reviews as **FAKE** or **GENUINE**, along with a confidence score, enabling platforms and users to make more informed trust decisions.
+```markdown
+# 🛡️ RevGuard — Fake Review Detection System
+
+![Hackathon](https://img.shields.io/badge/Event-Walmart%20Sparkathon%202025-blue)
+![Track](https://img.shields.io/badge/Track-Customer%20Trust%20%2F%20Retail%20Cybersecurity-green)
+![Status](https://img.shields.io/badge/Status-Prototype-orange)
+
+**RevGuard** is an AI-powered fake review detection system designed to identify deceptive and manipulated product reviews on e-commerce platforms. It leverages a **fine-tuned RoBERTa transformer model** to classify reviews as **FAKE** or **GENUINE**, providing a confidence score to enable better trust decisions.
 
 ---
 
 ## 🚀 Project Overview
 
-Online reviews heavily influence customer purchasing decisions, but fake reviews undermine trust and fairness in digital marketplaces.  
-RevGuard addresses this problem by leveraging **state-of-the-art NLP models** to detect suspicious reviews in real time.
+Online reviews heavily influence purchasing decisions, but fake reviews undermine trust and fairness in digital marketplaces. RevGuard addresses this problem by leveraging **state-of-the-art NLP models** to detect suspicious reviews in real-time.
 
-**Key Capabilities**
-- Binary classification: **FAKE / GENUINE**
-- Confidence-based predictions
-- REST API backend for easy integration
-- Scalable ML inference pipeline
-- Frontend dashboard for testing predictions
+### Key Capabilities
+* **Binary Classification:** Detects `FAKE` vs `GENUINE` reviews.
+* **Confidence Scoring:** Provides probability percentages for predictions.
+* **REST API Backend:** Easy integration using FastAPI/Flask.
+* **Interactive Dashboard:** React-based frontend for testing predictions.
 
 ---
 
 ## 🧠 Model Details
 
-- **Base Model:** `roberta-base` (Hugging Face)
-- **Architecture:** Transformer-based binary classifier
-- **Labels:** 2 (`FAKE`, `GENUINE`)
-- **Framework:** PyTorch + Hugging Face Transformers
+* **Base Model:** `roberta-base` (Hugging Face)
+* **Architecture:** Transformer-based binary classifier
+* **Framework:** PyTorch + Hugging Face Transformers
+* **Labels:** `FAKE`, `GENUINE`
 
 ### 🔍 Inference Pipeline
-Review Text
-↓
-Tokenizer
-↓
-RoBERTa Encoder
-↓
-Logits
-↓
-Softmax
-↓
-Prediction + Confidence (%)
-
-bash
-Copy code
+`Review Text` $\rightarrow$ `Tokenizer` $\rightarrow$ `RoBERTa Encoder` $\rightarrow$ `Logits` $\rightarrow$ `Softmax` $\rightarrow$ `Prediction + Confidence (%)`
 
 ### 📌 Example Output
 ```json
@@ -49,89 +39,121 @@ Copy code
   "prediction": "FAKE",
   "confidence": 92.73
 }
-📁 Project Structure
-graphql
-Copy code
+
+```
+
+---
+
+## ⚙️ Tech Stack
+
+* **Backend:** Python, FastAPI / Flask
+* **ML Framework:** PyTorch
+* **NLP:** Hugging Face Transformers (`roberta-base`)
+* **Frontend:** React (Vite)
+* **Deployment:** Docker / Cloud compatible
+
+---
+
+## 📁 Project Structure
+
+```graphql
 RevGuard/
 ├── backend/
-│   ├── app/                      # API logic (FastAPI / Flask)
+│   ├── app/                    # API logic
 │   │   └── __pycache__/
 │   ├── models/
-│   │   └── roberta_saved_model/  # Fine-tuned RoBERTa model files
+│   │   └── roberta_saved_model/ # Fine-tuned RoBERTa model files
 │   ├── requirements.txt
 │   └── app.py
 │
-├── fontend/                      # React frontend (typo retained intentionally)
+├── fontend/                    # React frontend
 │   ├── src/
 │   ├── package.json
 │   └── vite.config.js
 │
 └── README.md
-🔧 Running the Project Locally
-1️⃣ Backend Setup (Python)
-Install dependencies:
 
-bash
-Copy code
+```
+
+---
+
+## 🔧 Running the Project Locally
+
+### 1️⃣ Backend Setup (Python)
+
+Navigate to the root directory and install dependencies:
+
+```bash
 pip install -r backend/requirements.txt
+
+```
+
 Start the backend server:
 
-bash
-Copy code
+```bash
 python backend/app.py
-The API will be available at:
 
-arduino
-Copy code
-http://localhost:8000
-2️⃣ Frontend Setup (React + Vite)
-Navigate to frontend directory:
+```
 
-bash
-Copy code
+> The API will be available at: `http://localhost:8000`
+
+### 2️⃣ Frontend Setup (React + Vite)
+
+Navigate to the frontend directory:
+
+```bash
 cd fontend
+
+```
+
 Install dependencies:
 
-bash
-Copy code
+```bash
 npm install
-Start development server:
 
-bash
-Copy code
+```
+
+Start the development server:
+
+```bash
 npm run dev
-⚙️ Tech Stack
-Backend: Python, FastAPI / Flask
 
-ML Framework: PyTorch
+```
 
-NLP: Hugging Face Transformers (roberta-base)
+---
 
-Frontend: React (Vite)
+## ☁️ Future Enhancements
 
-Deployment Ready: Docker / Cloud compatible
+* 🌍 **Multilingual Support:** Detect fake reviews in multiple languages.
+* 🔗 **Metadata Validation:** Analyze user history and product signals.
+* 🧪 **Adversarial Robustness:** Test against generated fake reviews.
+* 🚀 **Cloud Deployment:** AWS Lambda or Hugging Face Inference Endpoints.
+* 📊 **Admin Dashboard:** Analytics and monitoring tools.
 
-☁️ Future Enhancements
-🌍 Multilingual fake review detection
+---
 
-🔗 Metadata & source-based validation (user history, product signals)
+## 🤝 Team
 
-🧪 Adversarial fake review generation for robustness
+**Team Horizons**
 
-🚀 Cloud deployment (AWS Lambda / Hugging Face Inference Endpoints)
+---
 
-📊 Admin dashboard with analytics and monitoring
+## 🏆 Hackathon Submission
 
-🤝 Team
-Team Horizons
+* **Event:** Walmart Sparkathon 2025
+* **Track:** Customer Trust / Retail Cybersecurity
+* **Theme:** AI for Online Review Reliability
 
-🏆 Hackathon Submission
-Event: Walmart Sparkathon 2025
-Track: Customer Trust / Retail Cybersecurity
-Theme: AI for Online Review Reliability
+---
 
-📜 License
-This project is for educational and hackathon purposes.
-Model weights and datasets follow their respective licenses.
+## 📜 License
 
-RevGuard — Building Trust, One Review at a Time. 🛡️
+This project is for educational and hackathon purposes. Model weights and datasets follow their respective licenses.
+
+> **RevGuard — Building Trust, One Review at a Time. 🛡️**
+
+```
+
+**Next Step:** Would you like me to generate the `requirements.txt` or the `app.py` file to match this README?
+
+```
