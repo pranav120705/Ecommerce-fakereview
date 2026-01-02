@@ -1,6 +1,4 @@
-Here is the consolidated `README.md` code for your project.
 
-```markdown
 # 🛡️ RevGuard — Fake Review Detection System
 
 ![Hackathon](https://img.shields.io/badge/Event-Walmart%20Sparkathon%202025-blue)
@@ -42,7 +40,6 @@ Online reviews heavily influence purchasing decisions, but fake reviews undermin
 
 ```
 
----
 
 ## ⚙️ Tech Stack
 
